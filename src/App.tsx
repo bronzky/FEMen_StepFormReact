@@ -1,33 +1,33 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Step from './components/step'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [currentStep, setCurrentStep] = useState(0);
+
+  const steps = [
+    {label: "Your Info", component: <Step text="Step 1" />},
+    {label: "Select Plan", component: <Step text="Step 2"  />},
+    {label: "Add-Ons", component: <Step text="Step 3"  />},
+    {label: "Summary", component: <Step  text="Step 4" />},
+  ]
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <section className="card">
+        <div className='card_steps'>
+          {steps.map((step, index) => (
+            <div key={index} className={`step ${currentStep == index ? "active":""}`} onClick={() => setCurrentStep(index)}>              
+              <p><span>Step: {index + 1} </span>{step.label}</p>
+            </div>
+          )
+          )}
+        </div>
+         <div className='card_form'>
+          {steps[currentStep].component}
+        </div>
+      </section>
     </>
   )
 }
