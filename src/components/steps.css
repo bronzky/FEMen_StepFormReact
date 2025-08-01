@@ -1,0 +1,46 @@
+.step_fancy {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    color: white;
+    align-items: stretch;
+    cursor: pointer;
+    gap: 1rem;
+    text-transform: uppercase;
+}
+
+.step_texts {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.step_texts_index {
+    font-weight: 100;
+}
+
+.step_texts_label {
+    font-weight: 700;
+}
+
+.step_number_wrapper {
+    display: flex;
+    align-items: center; /* vertical centering */
+    justify-content: center; /* horizontal centering if needed */
+}
+
+.step_number {
+    aspect-ratio: 1 / 1;
+    height: 70%;
+    border-radius: 50%;
+    border: 2px solid rgb(255, 255, 255);
+    text-align: center;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 200ms ease-in-out;
+}
+
+.active {
+  background-color: var(--color-blue-light);
+  color: black;
+}

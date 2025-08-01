@@ -2,7 +2,7 @@
 
 --color-blue: hsl(213, 96%, 18%);
 --color-purple: hsl(243, 100%, 62%);
---color-blue-lighter: 300: hsl(228, 100%, 84%);
+--color-blue-lighter: hsl(228, 100%, 84%);
 --color-blue-light: hsl(206, 94%, 87%);
 --color-red: hsl(354, 84%, 57%);
 
@@ -50,8 +50,4 @@
   cursor: pointer;
   border-radius: 1rem;
   padding: 0 .5rem;
-}
-
-.active {
-  outline: 4px solid rgb(0, 0, 0);
 }
